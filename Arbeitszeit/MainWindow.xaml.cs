@@ -233,7 +233,8 @@ namespace Arbeitszeit
                 else
                 {
                     zeile = alphabet[startZelle + i + 1] + zeilenNummer.ToString();
-                    zeileEmpty = worksheet.Cell(zeile).IsEmpty();
+                    string zeile2 = alphabet[startZelle + i + 3] + zeilenNummer.ToString();
+                    zeileEmpty = worksheet.Cell(zeile).IsEmpty() & worksheet.Cell(zeile2).IsEmpty();
                     if (zeileEmpty)
                     {
                         worksheet.Cell(zeile).Value = localDateTime.TimeOfDay;
@@ -245,30 +246,7 @@ namespace Arbeitszeit
                 {
                     i += 3;
                 }
-                //zeile = alphabet[startZelle + i] + zeilenNummer.ToString();
-                //zeileEmpty = worksheet.Cell(zeile).IsEmpty();
 
-                    //if (zeileEmpty)
-                    //{ 
-                    //    worksheet.Cell(zeile).Value = localDateTime.TimeOfDay;
-                    //    zeile = alphabet[startZelle + i + 2] + zeilenNummer.ToString();
-                    //    worksheet.Cell(zeile).Value = textBoxAuftrag.Text;
-                    //    eingetragen = true;
-                    //}
-                    //else
-                    //{
-                    //    zeile = alphabet[startZelle + i + 1] + zeilenNummer.ToString();
-                    //    zeileEmpty = worksheet.Cell(zeile).IsEmpty();
-                    //    if (zeileEmpty)
-                    //    {
-                    //        worksheet.Cell(zeile).Value = localDateTime.TimeOfDay;
-                    //        eingetragen = true;
-                    //    }
-                    //    else
-                    //    {
-                    //        i += 3;
-                    //    }
-                    //}
 
             }
 
